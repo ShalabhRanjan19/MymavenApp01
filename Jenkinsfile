@@ -21,8 +21,8 @@ pipeline {
 
         stage('Deploy WAR') {
             steps {
-                // Replace with your actual remote details
-                sh '/home/shalabh/MymavenWebApp01/target/'
+                // Copy WAR to Tomcat's webapps folder using sudo
+                sh 'sudo cp target/MymavenWebApp01.war /opt/tomcat/webapps/'
             }
         }
     }
